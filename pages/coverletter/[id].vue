@@ -1,9 +1,5 @@
 <template>
-  <div
-    v-if="talent"
-    :id="`talent-cover__${talentId}`"
-    class="font-sans w-full h-full"
-  >
+  <div v-if="talent" :id="`talent-cover__${talentId}`" class="w-full h-full">
     <div class="container mx-auto py-8 px-4 w-full h-full">
       <div class="bg-white p-6 rounded-lg shadow-lg">
         <h1 v-if="fullName" class="text-3xl font-semibold">{{ fullName }}</h1>
@@ -12,8 +8,13 @@
           v-if="links && links.length"
           class="list-disc list-inside text-gray-700"
         >
-          <li v-for="(link, index) in links" :key="index">
-            <a :href="link" class="text-blue-500 hover:underline">{{ link }}</a>
+          <li
+            v-for="(link, index) in links"
+            :key="index"
+            class="flex items-center space-x-2"
+          >
+            <Icon :id="`icon__${idx}`" name="material-symbols:captive-portal" />
+            <a :href="link.url" class="text-blue-500 hover:underline">{{ link.name }}</a>
           </li>
         </ul>
 
@@ -25,7 +26,7 @@
           </p>
         </div>
         <div v-if="motivation" class="mt-4 mb-2">
-            <h2 class="text-xl font-semibold mb-2">Motivation</h2>
+          <h2 class="text-xl font-semibold mb-2">Motivation</h2>
           <p class="text-gray-700">
             {{ motivation }}
           </p>
@@ -38,6 +39,25 @@
 <script>
 export default {
   setup() {
+    const { fontFamily, fontUrl } = useFonts();
+
+    useHead({
+      link: [
+        {
+          rel: "preconnect",
+          href: "https://fonts.googleapis.com",
+        },
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossOrigin: true,
+        },
+        {
+          rel: "stylesheet",
+          href: fontUrl,
+        },
+      ],
+    });
     const store = useTalentStore();
 
     const route = useRoute();
@@ -67,9 +87,15 @@ export default {
       talent: selectedTalent,
       talentId: store.selectedTalentId,
       motivation,
+      fontFamily,
     };
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+html,
+body {
+  font-family: v-bind(fontFamily);
+}
+</style>

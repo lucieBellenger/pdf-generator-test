@@ -84,7 +84,44 @@ export const useTalentStore = defineStore("talent", () => {
       summary:
         "Frontend developer passionate about creating responsive and user-friendly web applications.",
       skills: ["HTML", "CSS", "JavaScript", "Vue.js"],
+      tools: ["Git", "VsCode", "Nuxt"],
+
       workExperiences: [
+        {
+          jobTitle: "Frontend Developer",
+          companyName: "Tech Startup",
+          description: "Built and maintained modern web applications.",
+          from: "2019-09-01",
+          to: "2023-03-31",
+        },
+        {
+          jobTitle: "Frontend Developer",
+          companyName: "Tech Startup",
+          description: "Built and maintained modern web applications.",
+          from: "2019-09-01",
+          to: "2023-03-31",
+        },
+        {
+          jobTitle: "Frontend Developer",
+          companyName: "Tech Startup",
+          description: "Built and maintained modern web applications.",
+          from: "2019-09-01",
+          to: "2023-03-31",
+        },
+        {
+          jobTitle: "Frontend Developer",
+          companyName: "Tech Startup",
+          description: "Built and maintained modern web applications.",
+          from: "2019-09-01",
+          to: "2023-03-31",
+        },
+        {
+          jobTitle: "Frontend Developer",
+          companyName: "Tech Startup",
+          description: "Built and maintained modern web applications.",
+          from: "2019-09-01",
+          to: "2023-03-31",
+        },
         {
           jobTitle: "Frontend Developer",
           companyName: "Tech Startup",
@@ -94,6 +131,11 @@ export const useTalentStore = defineStore("talent", () => {
         },
       ],
       education: [
+        {
+          degreeName: "Bachelor of Science in Computer Science",
+          universityName: "Tech University",
+          graduationYear: "2019-06-15",
+        },
         {
           degreeName: "Bachelor of Science in Computer Science",
           universityName: "Tech University",

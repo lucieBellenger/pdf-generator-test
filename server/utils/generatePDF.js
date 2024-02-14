@@ -4,11 +4,15 @@ export const generatePDF = async (options) => {
   try {
     await page.goto(`http://localhost:3000/${urlToGo}/${id}`);
 
-    await page.emulateMediaType("screen");
+    await page.emulateMediaType("print");
 
-    await page.waitForSelector(`[id^="${idToTarget}"]`, {
-      visible: true,
-    });
+    for (const id of idToTarget) {
+      await page.waitForSelector(`[id^="${id}"]`, {
+        visible: true,
+      });
+    }
+
+    await page.evaluateHandle("document.fonts.ready");
 
     const pdfPath = `${filePath}/${templateName}.pdf`;
 
@@ -16,6 +20,8 @@ export const generatePDF = async (options) => {
       path: pdfPath,
       format: "A4",
       printBackground: true,
+      waitUntil: "loaded",
+      preferCSSPageSize: true,
     });
 
     return {
@@ -29,6 +35,6 @@ export const generatePDF = async (options) => {
     };
   } catch (error) {
     console.error(`Error generating PDF for ${urlToGo}:`, error.message);
-    throw error; // Rethrow the error to be caught in the calling function
+    throw error;
   }
 };

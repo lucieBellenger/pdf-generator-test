@@ -13,9 +13,9 @@ export default defineEventHandler(async (event) => {
       urlToGo: "talent",
       filePath: "pdfs/cvs",
       id,
-      idToTarget: "talent-resume__",
+      idToTarget: ["talent-resume__", "emoji", "icon__"],
       templateName: `result_${id}`,
-      page
+      page,
     };
 
     const pdf = await generatePDF(options);

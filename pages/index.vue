@@ -109,6 +109,5 @@ export default {
         SPLIT PDFs
       </button>
     </div>
-    <!-- <preview-pdf :src="pdfUrl"></preview-pdf> -->
   </div>
 </template>

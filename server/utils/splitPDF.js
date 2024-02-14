@@ -18,3 +18,7 @@ export const splitPDF = async (Uint8Array, pageNumber, outputPath) => {
   const modifiedPdfBytes = await pdfDoc.save();
   fs.writeFileSync(outputPath, modifiedPdfBytes);
 };
+
+export const getFullPath = (folderNames, fileName) => {
+  return path.join(process.cwd(), ...folderNames, fileName);
+};

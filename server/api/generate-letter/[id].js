@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
       urlToGo: "coverletter",
       filePath: "pdfs/coverLetters",
       id,
-      idToTarget: "talent-cover__",
+      idToTarget: ["talent-cover__", "icon__"],
       templateName: `result_${id}`,
       page,
     };

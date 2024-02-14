@@ -36,7 +36,7 @@ const mergePDFs = async (base64PDFs, outputPath) => {
 };
 
 export const generateMergedPDFs = async (options) => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   let pdfs = [];
   let id;
   for (const urlOptions of options) {
@@ -47,7 +47,6 @@ export const generateMergedPDFs = async (options) => {
         ...urlOptions,
         page,
       });
-      //   pdfs.push(`../../${urlOptions.filePath}/result_${urlOptions.id}.pdf`);
       pdfs.push(pdf.body);
       id = urlOptions.id;
 
@@ -64,7 +63,8 @@ export const generateMergedPDFs = async (options) => {
   await browser.close();
 
   if (pdfs.length) {
+    const path = `pdfs/merged/result__${id}.pdf`;
     await mergePDFs(pdfs, path);
-    return `pdfs/merged/result__${id}.pdf`;
+    return path;
   }
 };
