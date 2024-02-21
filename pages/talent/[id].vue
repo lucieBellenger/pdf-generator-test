@@ -1,5 +1,9 @@
 <template>
-  <div :id="`talent-resume__${id}`" class="h-[297mm] w-[210mm] p-12">
+  <div
+    :id="`talent-resume__${talentId}`"
+    class="h-[297mm] w-[210mm] p-12"
+    :style="{ fontFamily: fontFamily + ', sans-serif !important' }"
+  >
     <div class="flex">
       <div class="mt-8 grid w-[40%] h-full-print bg-blue-500 text-white p-8">
         <div class="flex flex-col">
@@ -133,7 +137,7 @@ export default {
         },
         {
           rel: "stylesheet",
-          href: fontUrl,
+          href: fontUrl.value,
         },
       ],
     });
@@ -180,12 +184,7 @@ export default {
 };
 </script>
 
-<style scoped>
-html,
-body {
-  font-family: v-bind(fontFamily);
-}
-
+<style>
 @page {
   size: A4;
   margin: 0;
@@ -217,9 +216,5 @@ body {
   .print\:p-0 {
     padding: 0 !important;
   }
-}
-
-.text-blue {
-  color: blue;
 }
 </style>

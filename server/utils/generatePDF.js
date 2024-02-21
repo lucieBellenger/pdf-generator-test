@@ -5,14 +5,13 @@ export const generatePDF = async (options) => {
     await page.goto(`http://localhost:3000/${urlToGo}/${id}`);
 
     await page.emulateMediaType("print");
+    await page.evaluateHandle("document.fonts.ready");
 
     for (const id of idToTarget) {
       await page.waitForSelector(`[id^="${id}"]`, {
         visible: true,
       });
     }
-
-    await page.evaluateHandle("document.fonts.ready");
 
     const pdfPath = `${filePath}/${templateName}.pdf`;
 
@@ -21,7 +20,7 @@ export const generatePDF = async (options) => {
       format: "A4",
       printBackground: true,
       waitUntil: "loaded",
-      preferCSSPageSize: true,
+      // preferCSSPageSize: true,
     });
 
     return {

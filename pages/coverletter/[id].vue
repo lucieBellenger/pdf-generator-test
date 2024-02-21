@@ -1,5 +1,10 @@
 <template>
-  <div v-if="talent" :id="`talent-cover__${talentId}`" class="w-full h-full">
+  <div
+    v-if="talent"
+    :id="`talent-cover__${talentId}`"
+    class="w-full h-full"
+    :style="{ fontFamily: fontFamily + ', sans-serif !important' }"
+  >
     <div class="container mx-auto py-8 px-4 w-full h-full">
       <div class="bg-white p-6 rounded-lg shadow-lg">
         <h1 v-if="fullName" class="text-3xl font-semibold">{{ fullName }}</h1>
@@ -14,7 +19,9 @@
             class="flex items-center space-x-2"
           >
             <Icon :id="`icon__${idx}`" name="material-symbols:captive-portal" />
-            <a :href="link.url" class="text-blue-500 hover:underline">{{ link.name }}</a>
+            <a :href="link.url" class="text-blue-500 hover:underline">{{
+              link.name
+            }}</a>
           </li>
         </ul>
 
@@ -40,6 +47,7 @@
 export default {
   setup() {
     const { fontFamily, fontUrl } = useFonts();
+    console.log("fontFamily:", fontFamily.value);
 
     useHead({
       link: [
@@ -54,7 +62,7 @@ export default {
         },
         {
           rel: "stylesheet",
-          href: fontUrl,
+          href: fontUrl.value,
         },
       ],
     });
@@ -93,9 +101,4 @@ export default {
 };
 </script>
 
-<style scoped>
-html,
-body {
-  font-family: v-bind(fontFamily);
-}
-</style>
+<style></style>
