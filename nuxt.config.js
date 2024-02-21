@@ -13,4 +13,10 @@ export default defineNuxtConfig({
     autoImports: ["defineStore"],
   },
   imports: { dirs: ["./stores"] },
+  components: [
+    {
+      global: true,
+      dirs: ["~/components"],
+    },
+  ],
 });
