@@ -3,11 +3,12 @@
     <Icon :name="icon" width="12" height="12"></Icon>
     <a
       v-if="formattedHref"
+      data-test-id="formatted-href"
       :href="formattedHref"
       class="text-vibrant-blue underline cursor-pointer text-xs"
       >{{ text }}</a
     >
-    <span v-else class="text-xs">{{ text }}</span>
+    <span v-else data-test-id="no-ref" class="text-xs">{{ text }}</span>
   </div>
 </template>
 
@@ -44,7 +45,7 @@ export default {
         case "LINKEDIN_HANDLE":
           return "mdi:linkedin";
         default:
-          return "mdi:email-outline";
+          return "";
       }
     });
 

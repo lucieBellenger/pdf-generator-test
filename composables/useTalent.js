@@ -1,15 +1,18 @@
-export function useTalent(talentData) {
+export function useTalent() {
+  const talentStore = useTalentStore();
+  const selectedTalent = computed(() => talentStore.selectedTalent);
+
   const fullName = computed(
-    () => `${talentData.firstName} ${talentData.lastName}`
+    () => `${selectedTalent.value?.firstName} ${selectedTalent.value?.lastName}`
   );
 
-  const jobTitle = computed(() => talentData?.professionalTitle);
+  const jobTitle = computed(() => selectedTalent.value?.professionalTitle);
 
   const fullAddress = computed(() => {
     const parts = [
-      talentData.homeAddressCity,
-      talentData.homeAddressState,
-      talentData.homeAddressCountry,
+      selectedTalent.value.homeAddressCity,
+      selectedTalent.value.homeAddressState,
+      selectedTalent.value.homeAddressCountry,
     ];
 
     return parts.filter(Boolean).join(", ");
@@ -18,23 +21,23 @@ export function useTalent(talentData) {
   const contactLinks = computed(() => {
     const updatedInfoArray = [];
 
-    if (talentData.mobileCode && talentData.mobileNumber) {
+    if (selectedTalent.value.mobileCode && selectedTalent.value.mobileNumber) {
       updatedInfoArray.push({
-        text: `+${talentData.mobileCode} ${talentData.mobileNumber}`,
+        text: `+${selectedTalent.value.mobileCode} ${selectedTalent.value.mobileNumber}`,
         type: "MOBILE_NUMBER",
       });
     }
 
-    if (talentData.email) {
+    if (selectedTalent.value.email) {
       updatedInfoArray.push({
-        text: talentData.email,
+        text: selectedTalent.value.email,
         type: "EMAIL",
       });
     }
 
-    if (talentData.linkedinHandle) {
+    if (selectedTalent.value.linkedinHandle) {
       updatedInfoArray.push({
-        text: talentData.linkedinHandle,
+        text: selectedTalent.value.linkedinHandle,
         type: "LINKEDIN_HANDLE",
       });
     }

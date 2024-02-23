@@ -76,7 +76,6 @@ export default {
     const { getFormattedDuration } = useDate();
     const workExperienceDuration = computed(() => {
       if (props.workExperience.startDate && props.workExperience.endDate) {
-        // const duration = "2 years";
         const duration = getFormattedDuration(
           props.workExperience.startDate,
           props.workExperience.endDate

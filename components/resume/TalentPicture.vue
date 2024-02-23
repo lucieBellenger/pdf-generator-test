@@ -8,7 +8,7 @@ export default {
   props: {
     src: {
       type: String,
-      required: '/user.jpeg',
+      default: '/user.jpeg',
     },
     width: {
       type: String,

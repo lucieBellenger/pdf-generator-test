@@ -1,5 +1,5 @@
 <template>
-  <div :class="[color, thickness, borderSize, axis]" class="border" />
+  <div :class="[color, thickness, borderSize, axis]" />
 </template>
 
 <script>
@@ -12,7 +12,7 @@ export default {
     },
     thickness: {
       type: String,
-      default: "border-0.5",
+      default: "border-t",
     },
     length: {
       type: String,

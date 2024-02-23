@@ -4,400 +4,385 @@ import { ref, computed } from "vue";
 export const useTalentStore = defineStore("talent", () => {
   const talents = ref([
     {
+      level: "",
+      state: "ACTIVE",
+      lastLogin: "2024-02-19T11:52:06",
+      client: {
+        id: 2,
+        name: "philips",
+      },
+      aggregatorFreelancer: false,
+      endOfValidWorkPermit: null,
+      endOfValidVisa: null,
+      consentTo: [
+        {
+          id: 2,
+          name: "philips",
+        },
+      ],
+      billingAddressLine1: null,
+      billingAddressLine2: null,
+      billingAddressStreet: null,
+      billingAddressZip: null,
+      billingAddressCity: null,
+      billingAddressCountry: null,
       id: 1,
+      firstName: "Ashanti",
+      lastName: "Baby",
+      professionalTitle: "SENIOR GRAPHIC DESIGNER",
+      email: "ashanti@gmail.com",
+      emailVerified: true,
+      description:
+        "<p>GRAPHIC DESIGNER</p><p></p><p>PERSONAL PROFILE</p><p></p><p>With years of experience and a proven track</p><p>record of success, I am a creative and</p><p>innovative graphic designer fueled by my love of</p><p>all things design.</p><p></p><p></p><p></p><p>SPECIALIZATION</p><p></p><p>* Brand Identity and Logo Design</p><p>* Marketing and Advertising Design</p><p>* Traditional and Digital Illustration</p><p>* Web Design and Flash Animation</p><p>* Typography</p>",
+      mobileCode: "1",
+      mobileNumber: "234567890",
+      mobileVerified: false,
+      fixedLineCode: null,
+      fixedLineNumber: null,
+      homeAddressLine1: "Rachelle ",
+      homeAddressLine2: null,
+      homeAddressStreet: "Anywhere St 123",
+      homeAddressZip: "12345",
+      homeAddressCity: "Schenectady",
+      homeAddressState: "Utah",
+      homeAddressCountry: "US",
+      homeLatitude: null,
+      homeLongitude: null,
+      nonTimeAvailabilities: [],
+      workingRadius: 5,
+      remote: true,
+      onsite: false,
+      hybrid: false,
+      hourRateValue: 0,
+      hourRateCurrency: "EUR",
+      linkedinHandle: "https://www.linkedin.com/",
+      logoUUID: null,
+      subscribed: false,
+      jobNotificationsOptedIn: true,
+      internalCommunicationsOptedIn: true,
+      jobNotificationsDigestEnabled: false,
+      cvAttachments: [
+        {
+          id: 215,
+          uuid: "8b445817-951d-4558-9e86-b3e90e7ad74b",
+          name: "CV Rachelle Beaudry EN (2).pdf",
+          contentType: "application/pdf",
+        },
+      ],
+      cvId: 460,
+      securityIds: [
+        {
+          legalEntityName: "philips",
+          securityId: "02022837",
+        },
+      ],
+      applications: [
+        {
+          title: "Superstar",
+          vmsId: "del-kwhefkwhfkwen",
+          id: 221,
+          jobHandleId: 1198,
+          status: "a",
+          label: null,
+          labelKey: null,
+        },
+        {
+          title: "Drag race super star",
+          vmsId: "764584756jksdbf",
+          id: 223,
+          jobHandleId: 1200,
+          status: "a",
+          label: null,
+          labelKey: null,
+        },
+        {
+          title: "Project with motivation",
+          vmsId: "PHIJshfslfsh8378474",
+          id: 226,
+          jobHandleId: 1198,
+          status: "a",
+          label: null,
+          labelKey: null,
+        },
+      ],
+    },
+    {
+      level: "",
+      state: "ACTIVE",
+      lastLogin: "2024-02-19T11:52:06",
+      client: {
+        id: 2,
+        name: "philips",
+      },
+      aggregatorFreelancer: false,
+      endOfValidWorkPermit: null,
+      endOfValidVisa: null,
+      consentTo: [
+        {
+          id: 2,
+          name: "philips",
+        },
+      ],
+      billingAddressLine1: null,
+      billingAddressLine2: null,
+      billingAddressStreet: null,
+      billingAddressZip: null,
+      billingAddressCity: null,
+      billingAddressCountry: null,
+      id: 2,
       firstName: "John",
       lastName: "Doe",
-      jobTitle: "Software Engineer",
-      links: [
-        { name: "LinkedIn", url: "https://www.linkedin.com/in/johndoe" },
-        { name: "GitHub", url: "https://github.com/johndoe" },
-      ],
-      summary:
-        "Experienced software engineer with a passion for web development.",
-      skills: ["JavaScript", "React", "Node.js"],
-      tools: ["VSCode", "Git"],
-      workExperiences: [
-        {
-          jobTitle: "Full Stack Developer",
-          companyName: "Tech Co.",
-          description: "Developed and maintained web applications.",
-          from: "2020-01-01",
-          to: "2022-12-31",
-        },
-      ],
-      education: [
-        {
-          degreeName: "Bachelor of Science in Computer Science",
-          universityName: "University of Tech",
-          graduationYear: "2019-05-01",
-        },
-      ],
-      motivation:
-        "As an experienced software engineer, I am passionate about web development and enjoy tackling complex challenges in the field. My goal is to continuously learn and contribute to innovative projects.",
+      professionalTitle: "WEB DEVELOPER",
+      email: "john.doe@example.com",
+      emailVerified: true,
+      // Add other attributes for the second user as needed
     },
     {
-      id: 2,
+      level: "",
+      state: "ACTIVE",
+      lastLogin: "2024-02-19T11:52:06",
+      client: {
+        id: 2,
+        name: "philips",
+      },
+      aggregatorFreelancer: false,
+      endOfValidWorkPermit: null,
+      endOfValidVisa: null,
+      consentTo: [
+        {
+          id: 2,
+          name: "philips",
+        },
+      ],
+      billingAddressLine1: null,
+      billingAddressLine2: null,
+      billingAddressStreet: null,
+      billingAddressZip: null,
+      billingAddressCity: null,
+      billingAddressCountry: null,
+      id: 3,
       firstName: "Jane",
       lastName: "Smith",
-      jobTitle: "UX Designer",
-      links: [{ name: "Portfolio", url: "https://www.janesmith.design" }],
-      summary:
-        "Passionate UX designer creating user-centered and visually appealing designs.",
-      skills: ["UI/UX Design", "Prototyping", "Usability Testing"],
-      workExperiences: [
-        {
-          jobTitle: "UX Designer",
-          companyName: "Design Studio",
-          description: "Designed intuitive and engaging user interfaces.",
-          from: "2018-06-01",
-          to: "2021-02-28",
-        },
-      ],
-      education: [
-        {
-          degreeName: "Master of Fine Arts in Design",
-          universityName: "Creative University",
-          graduationYear: "2018-05-15",
-        },
-      ],
+      professionalTitle: "SOFTWARE ENGINEER",
+      email: "jane.smith@example.com",
+      emailVerified: true,
+      // Add other attributes for the third user as needed
     },
     {
-      id: 3,
-      firstName: "Alex",
-      lastName: "Johnson",
-      jobTitle: "Marketing Specialist",
-      summary:
-        "Marketing professional with a focus on digital marketing strategies.",
-      skills: ["Digital Marketing", "Social Media Management"],
-      motivation:
-        "I am excited to embark on a journey of learning and growth. Being in the tech industry, I am enthusiastic about exploring new skills and technologies to stay at the forefront of innovation.",
-    },
-    {
+      level: "",
+      state: "ACTIVE",
+      lastLogin: "2024-02-19T11:52:06",
+      client: {
+        id: 2,
+        name: "philips",
+      },
+      aggregatorFreelancer: false,
+      endOfValidWorkPermit: null,
+      endOfValidVisa: null,
+      consentTo: [
+        {
+          id: 2,
+          name: "philips",
+        },
+      ],
+      billingAddressLine1: null,
+      billingAddressLine2: null,
+      billingAddressStreet: null,
+      billingAddressZip: null,
+      billingAddressCity: null,
+      billingAddressCountry: null,
       id: 4,
-      firstName: "Eva",
-      lastName: "Brown",
-      jobTitle: "Frontend Developer",
-      links: [
-        { name: "Portfolio", url: "https://www.evabrown.dev" },
-        { name: "GitHub", url: "https://github.com/evabrown" },
-      ],
-      summary:
-        "Frontend developer passionate about creating responsive and user-friendly web applications.",
-      skills: ["HTML", "CSS", "JavaScript", "Vue.js"],
-      tools: ["Git", "VsCode", "Nuxt"],
-
-      workExperiences: [
-        {
-          jobTitle: "Frontend Developer",
-          companyName: "Tech Startup",
-          description: "Built and maintained modern web applications.",
-          from: "2019-09-01",
-          to: "2023-03-31",
-        },
-        {
-          jobTitle: "Frontend Developer",
-          companyName: "Tech Startup",
-          description: "Built and maintained modern web applications.",
-          from: "2019-09-01",
-          to: "2023-03-31",
-        },
-        {
-          jobTitle: "Frontend Developer",
-          companyName: "Tech Startup",
-          description: "Built and maintained modern web applications.",
-          from: "2019-09-01",
-          to: "2023-03-31",
-        },
-        {
-          jobTitle: "Frontend Developer",
-          companyName: "Tech Startup",
-          description: "Built and maintained modern web applications.",
-          from: "2019-09-01",
-          to: "2023-03-31",
-        },
-        {
-          jobTitle: "Frontend Developer",
-          companyName: "Tech Startup",
-          description: "Built and maintained modern web applications.",
-          from: "2019-09-01",
-          to: "2023-03-31",
-        },
-        {
-          jobTitle: "Frontend Developer",
-          companyName: "Tech Startup",
-          description: "Built and maintained modern web applications.",
-          from: "2019-09-01",
-          to: "2023-03-31",
-        },
-      ],
-      education: [
-        {
-          degreeName: "Bachelor of Science in Computer Science",
-          universityName: "Tech University",
-          graduationYear: "2019-06-15",
-        },
-        {
-          degreeName: "Bachelor of Science in Computer Science",
-          universityName: "Tech University",
-          graduationYear: "2019-06-15",
-        },
-      ],
+      firstName: "Michael",
+      lastName: "Johnson",
+      professionalTitle: "DATA SCIENTIST",
+      email: "michael.johnson@example.com",
+      emailVerified: true,
+      // Add other attributes for the fourth user as needed
     },
     {
+      level: "",
+      state: "ACTIVE",
+      lastLogin: "2024-02-19T11:52:06",
+      client: {
+        id: 2,
+        name: "philips",
+      },
+      aggregatorFreelancer: false,
+      endOfValidWorkPermit: null,
+      endOfValidVisa: null,
+      consentTo: [
+        {
+          id: 2,
+          name: "philips",
+        },
+      ],
+      billingAddressLine1: null,
+      billingAddressLine2: null,
+      billingAddressStreet: null,
+      billingAddressZip: null,
+      billingAddressCity: null,
+      billingAddressCountry: null,
       id: 5,
-      firstName: "Sarah",
-      lastName: "Jones",
-      jobTitle: "Data Scientist",
-      links: [
-        { name: "LinkedIn", url: "https://www.linkedin.com/in/sarahjones" },
-      ],
-      summary:
-        "Data scientist with expertise in machine learning and statistical analysis.",
-      skills: ["Python", "Machine Learning", "Data Analysis"],
-      tools: ["Jupyter", "TensorFlow"],
-      workExperiences: [
-        {
-          jobTitle: "Data Scientist",
-          companyName: "Data Analytics Inc.",
-          description:
-            "Applied machine learning techniques to analyze large datasets.",
-          from: "2020-03-01",
-          to: "2022-11-30",
-        },
-      ],
-      motivation:
-        "With expertise in data science, I am dedicated to applying machine learning techniques for insightful data analysis. My focus is on leveraging data to drive informed decision-making and solve real-world problems.",
-      education: [
-        {
-          degreeName: "Master of Science in Data Science",
-          universityName: "Data University",
-          graduationYear: "2020-02-15",
-        },
-      ],
+      firstName: "Emily",
+      lastName: "Brown",
+      professionalTitle: "MARKETING MANAGER",
+      email: "emily.brown@example.com",
+      emailVerified: true,
+      // Add other attributes for the fifth user as needed
     },
     {
+      level: "",
+      state: "ACTIVE",
+      lastLogin: "2024-02-19T11:52:06",
+      client: {
+        id: 2,
+        name: "philips",
+      },
+      aggregatorFreelancer: false,
+      endOfValidWorkPermit: null,
+      endOfValidVisa: null,
+      consentTo: [
+        {
+          id: 2,
+          name: "philips",
+        },
+      ],
+      billingAddressLine1: null,
+      billingAddressLine2: null,
+      billingAddressStreet: null,
+      billingAddressZip: null,
+      billingAddressCity: null,
+      billingAddressCountry: null,
       id: 6,
-      firstName: "Mike",
+      firstName: "William",
       lastName: "Taylor",
-      jobTitle: "Graphic Designer",
-      summary:
-        "Creative graphic designer specializing in branding and digital illustrations.",
-      skills: ["Graphic Design", "Illustration", "Branding"],
-      motivation:
-        "As a creative graphic designer, I am passionate about crafting visually appealing designs that resonate with users. My expertise lies in branding and digital illustrations, where I bring ideas to life through compelling visuals.",
+      professionalTitle: "SOFTWARE DEVELOPER",
+      email: "william.taylor@example.com",
+      emailVerified: true,
+      // Add other attributes for the sixth user as needed
     },
     {
+      level: "",
+      state: "ACTIVE",
+      lastLogin: "2024-02-19T11:52:06",
+      client: {
+        id: 2,
+        name: "philips",
+      },
+      aggregatorFreelancer: false,
+      endOfValidWorkPermit: null,
+      endOfValidVisa: null,
+      consentTo: [
+        {
+          id: 2,
+          name: "philips",
+        },
+      ],
+      billingAddressLine1: null,
+      billingAddressLine2: null,
+      billingAddressStreet: null,
+      billingAddressZip: null,
+      billingAddressCity: null,
+      billingAddressCountry: null,
       id: 7,
-      firstName: "Chris",
-      lastName: "White",
-      jobTitle: "Backend Developer",
-      links: [{ name: "GitHub", url: "https://github.com/chriswhite" }],
-      skills: ["Java", "Spring Boot", "MongoDB"],
-      tools: ["IntelliJ", "Postman"],
-      workExperiences: [
-        {
-          jobTitle: "Backend Developer",
-          companyName: "Tech Solutions",
-          description:
-            "Developed server-side logic and integrated with databases.",
-          from: "2018-09-01",
-          to: "2023-05-31",
-        },
-        {
-          jobTitle: "Backend Developer",
-          companyName: "Tech Solutions",
-          description:
-            "Developed server-side logic and integrated with databases.",
-          from: "2018-09-01",
-          to: "2023-05-31",
-        },
-        {
-          jobTitle: "Backend Developer",
-          companyName: "Tech Solutions",
-          description:
-            "Developed server-side logic and integrated with databases.",
-          from: "2018-09-01",
-          to: "2023-05-31",
-        },
-        {
-          jobTitle: "Backend Developer",
-          companyName: "Tech Solutions",
-          description:
-            "Developed server-side logic and integrated with databases.",
-          from: "2018-09-01",
-          to: "2023-05-31",
-        },
-        {
-          jobTitle: "Backend Developer",
-          companyName: "Tech Solutions",
-          description:
-            "Developed server-side logic and integrated with databases.",
-          from: "2018-09-01",
-          to: "2023-05-31",
-        },
-        {
-          jobTitle: "Backend Developer",
-          companyName: "Tech Solutions",
-          description:
-            "Developed server-side logic and integrated with databases.",
-          from: "2018-09-01",
-          to: "2023-05-31",
-        },
-        {
-          jobTitle: "Backend Developer",
-          companyName: "Tech Solutions",
-          description:
-            "Developed server-side logic and integrated with databases.",
-          from: "2018-09-01",
-          to: "2023-05-31",
-        },
-        {
-          jobTitle: "Backend Developer",
-          companyName: "Tech Solutions",
-          description:
-            "Developed server-side logic and integrated with databases.",
-          from: "2018-09-01",
-          to: "2023-05-31",
-        },
-        {
-          jobTitle: "Backend Developer",
-          companyName: "Tech Solutions",
-          description:
-            "Developed server-side logic and integrated with databases.",
-          from: "2018-09-01",
-          to: "2023-05-31",
-        },
-        {
-          jobTitle: "Backend Developer",
-          companyName: "Tech Solutions",
-          description:
-            "Developed server-side logic and integrated with databases.",
-          from: "2018-09-01",
-          to: "2023-05-31",
-        },
-        {
-          jobTitle: "Backend Developer",
-          companyName: "Tech Solutions",
-          description:
-            "Developed server-side logic and integrated with databases.",
-          from: "2018-09-01",
-          to: "2023-05-31",
-        },
-      ],
-      education: [
-        {
-          degreeName: "Bachelor of Science in Computer Science",
-          universityName: "Tech University",
-          graduationYear: "2018-06-30",
-        },
-        {
-          degreeName: "Bachelor of Science in Computer Science",
-          universityName: "Tech University",
-          graduationYear: "2018-06-30",
-        },
-        {
-          degreeName: "Bachelor of Science in Computer Science",
-          universityName: "Tech University",
-          graduationYear: "2018-06-30",
-        },
-        {
-          degreeName: "Bachelor of Science in Computer Science",
-          universityName: "Tech University",
-          graduationYear: "2018-06-30",
-        },
-        {
-          degreeName: "Bachelor of Science in Computer Science",
-          universityName: "Tech University",
-          graduationYear: "2018-06-30",
-        },
-        {
-          degreeName: "Bachelor of Science in Computer Science",
-          universityName: "Tech University",
-          graduationYear: "2018-06-30",
-        },
-      ],
-      motivation:
-        "Building scalable and efficient backend solutions is my forte. With skills in Java, Spring Boot, and MongoDB, I enjoy developing server-side logic and integrating systems to create robust and reliable applications.",
+      firstName: "Olivia",
+      lastName: "Anderson",
+      professionalTitle: "GRAPHIC DESIGNER",
+      email: "olivia.anderson@example.com",
+      emailVerified: true,
+      // Add other attributes for the seventh user as needed
     },
     {
+      level: "",
+      state: "ACTIVE",
+      lastLogin: "2024-02-19T11:52:06",
+      client: {
+        id: 2,
+        name: "philips",
+      },
+      aggregatorFreelancer: false,
+      endOfValidWorkPermit: null,
+      endOfValidVisa: null,
+      consentTo: [
+        {
+          id: 2,
+          name: "philips",
+        },
+      ],
+      billingAddressLine1: null,
+      billingAddressLine2: null,
+      billingAddressStreet: null,
+      billingAddressZip: null,
+      billingAddressCity: null,
+      billingAddressCountry: null,
       id: 8,
-      firstName: "Megan",
-      lastName: "Clark",
-      jobTitle: "Content Writer",
-      summary:
-        "Experienced content writer with a focus on creating engaging and informative content.",
-      skills: ["Content Writing", "SEO"],
-      workExperiences: [
-        {
-          jobTitle: "Content Writer",
-          companyName: "Digital Marketing Agency",
-          description: "Produced high-quality content for various clients.",
-          from: "2017-05-15",
-          to: "2021-12-31",
-        },
-      ],
-      education: [
-        {
-          degreeName: "Bachelor of Arts in English",
-          universityName: "Literature College",
-          graduationYear: "2017-04-30",
-        },
-      ],
-      motivation:
-        "With a background in content writing, I am experienced in producing high-quality and engaging content. My focus is on creating informative and compelling narratives that captivate audiences and deliver value.",
+      firstName: "Daniel",
+      lastName: "Martinez",
+      professionalTitle: "FULL STACK DEVELOPER",
+      email: "daniel.martinez@example.com",
+      emailVerified: true,
+      // Add other attributes for the eighth user as needed
     },
     {
+      level: "",
+      state: "ACTIVE",
+      lastLogin: "2024-02-19T11:52:06",
+      client: {
+        id: 2,
+        name: "philips",
+      },
+      aggregatorFreelancer: false,
+      endOfValidWorkPermit: null,
+      endOfValidVisa: null,
+      consentTo: [
+        {
+          id: 2,
+          name: "philips",
+        },
+      ],
+      billingAddressLine1: null,
+      billingAddressLine2: null,
+      billingAddressStreet: null,
+      billingAddressZip: null,
+      billingAddressCity: null,
+      billingAddressCountry: null,
       id: 9,
-      firstName: "Ryan",
-      lastName: "Williams",
-      jobTitle: "Mobile App Developer",
-      links: [{ name: "Portfolio", url: "https://www.ryanwilliams.dev" }],
-      summary:
-        "Mobile app developer specializing in Android and iOS development.",
-      skills: ["Android", "iOS", "React Native"],
-      tools: ["Android Studio", "Xcode"],
-      workExperiences: [
-        {
-          jobTitle: "Mobile App Developer",
-          companyName: "App Tech",
-          description:
-            "Developed and maintained mobile applications for clients.",
-          from: "2019-02-01",
-          to: "2023-06-30",
-        },
-      ],
-      education: [
-        {
-          degreeName: "Master of Science in Mobile App Development",
-          universityName: "Tech University",
-          graduationYear: "2019-01-15",
-        },
-      ],
+      firstName: "Ella",
+      lastName: "Garcia",
+      professionalTitle: "UI/UX DESIGNER",
+      email: "ella.garcia@example.com",
+      emailVerified: true,
+      // Add other attributes for the ninth user as needed
     },
     {
+      level: "",
+      state: "ACTIVE",
+      lastLogin: "2024-02-19T11:52:06",
+      client: {
+        id: 2,
+        name: "philips",
+      },
+      aggregatorFreelancer: false,
+      endOfValidWorkPermit: null,
+      endOfValidVisa: null,
+      consentTo: [
+        {
+          id: 2,
+          name: "philips",
+        },
+      ],
+      billingAddressLine1: null,
+      billingAddressLine2: null,
+      billingAddressStreet: null,
+      billingAddressZip: null,
+      billingAddressCity: null,
+      billingAddressCountry: null,
       id: 10,
-      firstName: "Emma",
-      lastName: "Miller",
-      jobTitle: "UI/UX Designer",
-      links: [{ name: "Portfolio", url: "https://www.emmamiller.design" }],
-      skills: ["UI Design", "Wireframing", "User Research"],
-      workExperiences: [
-        {
-          jobTitle: "UI/UX Designer",
-          companyName: "Design Innovations",
-          description:
-            "Created visually appealing and user-friendly interfaces.",
-          from: "2020-07-01",
-          to: "2023-04-30",
-        },
-      ],
-      education: [
-        {
-          degreeName: "Bachelor of Fine Arts in Design",
-          universityName: "Art & Design College",
-          graduationYear: "2020-06-15",
-        },
-      ],
+      firstName: "Henry",
+      lastName: "Walker",
+      professionalTitle: "DATA ANALYST",
+      email: "henry.walker@example.com",
+      emailVerified: true,
     },
   ]);
 
@@ -407,10 +392,12 @@ export const useTalentStore = defineStore("talent", () => {
     if (talent) {
       talent.motivation = value;
     }
-
-    console.log(talent?.motivation);
   };
-  const selectedTalentId = ref(null);
+
+  const selectedTalentId = computed(() => {
+    const store = useApplicationStore();
+    return store.selectedTalentId;
+  });
 
   const selectedTalent = computed(() =>
     talents.value.find((talent) => talent.id === selectedTalentId.value)

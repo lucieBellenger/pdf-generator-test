@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import BasicDivider from "~/components/resume/BasicDivider";
+import BasicDivider from "~/components/common/BasicDivider";
 
 export default {
   name: "BlockTitle",

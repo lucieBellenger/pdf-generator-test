@@ -1,8 +1,5 @@
 <script>
-import PreviewPdf from "~/components/PreviewPdf.vue";
-
 export default {
-  components: { PreviewPdf },
   setup() {
     const store = useTalentStore();
     const pdfUrl = ref("");

@@ -9,6 +9,12 @@ export default {
   name: "BasicTemplateResume",
   components: { BasicResume },
   setup() {
+    const store = useApplicationStore();
+    const route = useRoute();
+
+    onMounted(() => {
+      store.setSelectedApplicationId(Number(route.params.id));
+    });
     return {};
   },
 };

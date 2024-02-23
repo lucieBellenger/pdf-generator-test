@@ -35,6 +35,7 @@ export default {
     const formattedList = computed(() => {
       return props.type === "PICKER_TAGS" ? props.list : getLanguageInfos(props.list);
     });
+    
     const languageLevel = {
       0: "Beginner",
       1: "Intermediate",
