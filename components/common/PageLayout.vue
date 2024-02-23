@@ -7,7 +7,7 @@
       </div>
       <slot name="header"></slot>
     </div>
-    <BasicDivider />
+    <BasicDivider class="mt-5"/>
     <slot name="content"></slot>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <BasicResume></BasicResume>
+  <BasicResume v-if="selectedApplication"></BasicResume>
 </template>
 
 <script>
@@ -36,10 +36,14 @@ export default {
     onMounted(() => {
       applicationStore.setSelectedApplicationId(Number(route.params.id));
     });
+
     const selectedTalentId = computed(() => applicationStore.selectedTalentId);
+    const selectedApplication = computed(
+      () => applicationStore.selectedApplication
+    );
 
     watch(
-      selectedTalentId.value,
+      selectedTalentId,
       (newVal) => {
         if (newVal) {
           talentStore.setSelectedTalentId(newVal);
@@ -47,6 +51,8 @@ export default {
       },
       { immediate: true }
     );
+
+    return { selectedApplication };
   },
 };
 </script>

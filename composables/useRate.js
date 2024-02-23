@@ -16,11 +16,12 @@ export function useRate() {
     PROJECT: "PROJECT",
   };
 
-  const formattedRateInfos = computed(
-    () =>
-      `${rate.value.value}${currencySignType[rate.value.currency]} / ${
-        periodType[rate.value.period]
-      }`
+  const formattedRateInfos = computed(() =>
+    rate.value
+      ? `${rate.value.value}${currencySignType[rate.value.currency]} / ${
+          periodType[rate.value.period]
+        }`
+      : ""
   );
 
   // TODO add computed based on clientContext to indicate if rate should be displayed

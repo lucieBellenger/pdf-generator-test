@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col text-xxs py-4">
+  <div class="flex flex-col text-xxs">
     <p v-if="id">ProjectID: {{ id }}</p>
     <p v-if="title" class="font-semibold">{{ title }}</p>
   </div>

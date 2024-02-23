@@ -1,5 +1,5 @@
 <template>
-  <BasicCoverLetter :full-name="fullName" />
+  <BasicCoverLetter :full-name="fullName" :motivation="formattedMotivation" />
 </template>
 
 <script>
@@ -27,16 +27,36 @@ export default {
         },
       ],
     });
-    const store = useTalentStore();
+    const applicationStore = useApplicationStore();
+    const talentStore = useTalentStore();
+
     const route = useRoute();
 
     onMounted(() => {
-      store.setSelectedTalentId(Number(route.params.id));
+      applicationStore.setSelectedApplicationId(Number(route.params.id));
     });
-
+    const selectedTalentId = computed(() => applicationStore.selectedTalentId);
     const { fullName } = useTalent();
 
-    return { fullName };
+    watch(
+      selectedTalentId.value,
+      (newVal) => {
+        if (newVal) {
+          talentStore.setSelectedTalentId(newVal);
+        }
+      },
+      { immediate: true }
+    );
+
+    const formatMotivation = (motivationString) => {
+      return motivationString.replace(/\n/g, "<br>");
+    };
+
+    const formattedMotivation = computed(() => {
+      return formatMotivation(applicationStore.motivation);
+    });
+
+    return { fullName, formattedMotivation };
   },
 };
 </script>

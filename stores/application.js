@@ -154,7 +154,7 @@ export const useApplicationStore = defineStore("application", () => {
 
   const motivation = computed(() => selectedApplication.value?.comment || "");
 
-  const rateInfos = computed(() => selectedApplication.value.rate);
+  const rateInfos = computed(() => selectedApplication.value?.rate);
 
   return {
     applications,

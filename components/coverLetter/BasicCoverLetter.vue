@@ -1,7 +1,7 @@
 <template>
   <PageLayout>
     <template #header>
-      <div class="flex justify-between items-center">
+      <div class="flex justify-between items-center pt-4">
         <ProjectTitleId></ProjectTitleId>
         <BasicChip></BasicChip>
       </div>
@@ -29,7 +29,7 @@ export default {
   props: {
     motivation: {
       type: String,
-      default: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. `,
+      default: ``,
     },
     fullName: {
       type: String,
