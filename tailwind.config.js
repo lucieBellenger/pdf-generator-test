@@ -14,8 +14,12 @@ export default {
         "blue-grey": {
           800: "#2a3e49",
         },
+        blue: {
+          200: "#5c8cfc",
+        },
         "vibrant-blue": "#3E57FF",
         grey: {
+          100: "#f5f5f5",
           200: "#a5a7a8",
           600: "#757575",
           900: "#212121",

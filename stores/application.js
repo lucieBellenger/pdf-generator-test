@@ -150,11 +150,186 @@ export const useApplicationStore = defineStore("application", () => {
     )
   );
 
-  const selectedTalentId = computed(() => selectedApplication.value?.freelancer?.id);
+  const selectedTalentId = computed(
+    () => selectedApplication.value?.freelancer?.id
+  );
 
   const motivation = computed(() => selectedApplication.value?.comment || "");
 
   const rateInfos = computed(() => selectedApplication.value?.rate);
+
+  const questions = ref([
+    {
+      id: 393,
+      talentVisibility: true,
+      mspVisibility: true,
+      mspCanEdit: false,
+      prefilledTest: true,
+      includeInJobSeekerUpload: false,
+      includeInPdf: true,
+      mandatory: true,
+      reject: false,
+      position: 5,
+      questionLabel:
+        "I am open for other opportunities. I agree that recruiters managing the Philips Talent-Pool can, on my behalf, apply me to other relevant projects within the Philips Talent-Pool that match my profile and experience.",
+      questionJson: {
+        modal: false,
+        type: "radio",
+        options: [
+          {
+            label: "Yes",
+            value: "yes",
+            selected: true,
+          },
+          {
+            label: "No",
+            value: "no",
+            selected: false,
+          },
+        ],
+      },
+      rawQuestionJson:
+        '{"tag":null,"modal":false,"type":"radio","options":[{"labelKey":"api.question.2.gwvekb.option.0","value":"yes","selected":true},{"labelKey":"api.question.2.gwvekb.option.1","value":"no","selected":false}]}',
+      parentQuestion: null,
+      parentQuestionAnswer: "",
+      answers: [
+        {
+          type: "radio",
+          value: "yes",
+          groupId: 0,
+        },
+      ],
+    },
+    {
+      id: 552,
+      includeInPdf: true,
+      position: 10,
+      questionLabel: "When is your possible start date?",
+      answers: [
+        {
+          type: "date",
+          value: "2024-05-09",
+          groupId: 0,
+        },
+      ],
+    },
+    {
+      id: 553,
+      talentVisibility: false,
+      mspVisibility: true,
+      mspCanEdit: true,
+      prefilledTest: false,
+      includeInJobSeekerUpload: false,
+      includeInPdf: true,
+      mandatory: false,
+      reject: false,
+      position: 11,
+      questionLabel: "Direct sourcing consultant",
+      questionJson: {
+        modal: false,
+        type: "text",
+        options: [
+          {
+            label: null,
+            value: null,
+            selected: false,
+          },
+        ],
+      },
+      rawQuestionJson:
+        '{"tag":null,"modal":false,"type":"text","options":[{"labelKey":null,"value":null,"selected":false}]}',
+      parentQuestion: null,
+      parentQuestionAnswer: "",
+      answers: [],
+    },
+    {
+      id: 554,
+      talentVisibility: false,
+      mspVisibility: true,
+      mspCanEdit: true,
+      prefilledTest: false,
+      includeInJobSeekerUpload: false,
+      includeInPdf: true,
+      mandatory: false,
+      reject: false,
+      position: 12,
+      questionLabel: "Summary",
+      questionJson: {
+        modal: false,
+        type: "text",
+        options: [
+          {
+            label: null,
+            value: null,
+            selected: false,
+          },
+        ],
+      },
+      rawQuestionJson:
+        '{"tag":null,"modal":false,"type":"text","options":[{"labelKey":null,"value":null,"selected":false}]}',
+      parentQuestion: null,
+      parentQuestionAnswer: "",
+      answers: [],
+    },
+    {
+      id: 555,
+      talentVisibility: false,
+      mspVisibility: true,
+      mspCanEdit: true,
+      prefilledTest: false,
+      includeInJobSeekerUpload: false,
+      includeInPdf: true,
+      mandatory: false,
+      reject: false,
+      position: 13,
+      questionLabel: "Courses",
+      questionJson: {
+        modal: false,
+        type: "text",
+        options: [
+          {
+            label: null,
+            value: null,
+            selected: false,
+          },
+        ],
+      },
+      rawQuestionJson:
+        '{"tag":null,"modal":false,"type":"text","options":[{"labelKey":null,"value":null,"selected":false}]}',
+      parentQuestion: null,
+      parentQuestionAnswer: "",
+      answers: [],
+    },
+    {
+      id: 556,
+      talentVisibility: false,
+      mspVisibility: false,
+      mspCanEdit: true,
+      prefilledTest: false,
+      includeInJobSeekerUpload: false,
+      includeInPdf: true,
+      mandatory: false,
+      reject: false,
+      position: 14,
+      questionLabel: "Key skills",
+      questionJson: {
+        modal: false,
+        type: "text",
+        options: [
+          {
+            label: null,
+            value: null,
+            selected: false,
+          },
+        ],
+      },
+      rawQuestionJson:
+        '{"tag":null,"modal":false,"type":"text","options":[{"labelKey":null,"value":null,"selected":false}]}',
+      parentQuestion: null,
+      parentQuestionAnswer: "",
+      answers: [],
+    },
+  ]);
 
   return {
     applications,
@@ -162,6 +337,7 @@ export const useApplicationStore = defineStore("application", () => {
     selectedApplication,
     rateInfos,
     motivation,
-    selectedTalentId
+    selectedTalentId,
+    questions,
   };
 });
